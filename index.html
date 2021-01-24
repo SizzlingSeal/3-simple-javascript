@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Experiment</title>
+</head>
+<body onload="reset()">
+  <audio src="" id="myAudio">
+    <source src="loud_alarm_clock.mp3" type="audio/mpeg">
+  </audio>
+  <div class = "container">
+    <div class="slider">
+  
+        <a href="#slide-1">Calculator</a>
+        <a href="#slide-2">To Do List</a>
+        <a href="#slide-3">Alarm Clock</a>
+      
+        <div class="slides">
+
+        <!--    CALCULATOR      -->
+          <div id="slide-1">
+            <div id="calculator">
+              <div id="prevCal"></div>
+                <div id="headCal"> 0</div>
+                <button id = "add" onclick="calculation('+')">+</button>
+                <button id = "subtract" onclick="calculation('-')">-</button>
+                <button id = "multiply" onclick="calculation('x')">x</button>
+                <button id = "divide" onclick="calculation('÷')">÷</button>
+                
+                <button onclick="numbers(7)" id="numseven">7</button>
+                <button onclick="numbers(8)" id="numeight">8</button>
+                <button onclick="numbers(9)" id="numnine">9</button>
+                <button id = "equals"  onclick="equals()">=</button>
+
+                <button onclick="numbers(4)" id="numfour">4</button>
+                <button onclick="numbers(5)" id="numfive">5</button>
+                <button onclick="numbers(6)" id="numsix">6</button>
+
+                <button onclick="numbers(1)" id="numone">1</button>
+                <button onclick="numbers(2)" id="numtwo">2</button>
+                <button onclick="numbers(3)" id="numthree">3</button>
+
+                <button onclick="numbers(0)" id="numzero">0</button>
+                <button onclick="numbers('.')" id="dec">.</button>
+                <button onclick="reset()" id="reset">AC</button>
+            </div>
+          </div>
+          <!-- END OF CALCULATOR -->
+
+          <!-- To Do List        -->
+          <div id="slide-2">
+            <div id="todoModule">
+              <h4>To Do List</h4>
+              <p>Enter text into the input field to add items to your list.</p>
+              <p>Click the Check to mark it as complete.</p>
+              <p>Click the "Trash" icon to remove the item from your list.</p>
+              
+             <div><input type="text" id="todo" maxlength="27"><button onclick="addlist()">Enter</button></div> 
+             <div id=todoListContainer>
+              <ul id="todoList">
+                
+              </ul>
+            </div>
+            </div>   
+          </div>
+          <!-- END OF To Do List      -->
+          <!-- ALARM CLOCK -->
+          <div id="slide-3">
+            
+            <h2>Alarm Clock</h2> 
+            <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+            <p id="todayDate"></p>
+            <p>Set the alarm for:<input type="time" id="time" name="time"></p>
+            
+            <button onclick="show()" id="alarmBtn">Set The Alarm</button>
+            <p id ="set">none</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+ <script src="javascript.js"></script>
+</body>
+</html>
